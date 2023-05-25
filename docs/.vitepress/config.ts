@@ -6,12 +6,12 @@ export default defineConfig({
   description: 'Backend y Frontend.',
   base: '/laravuel-apispa/', //  The default path during deployment / secondary address / base can be used/
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    logo: '/logo.png',
+    // https://vitepress.dev/reference/default-theme-config    
+    logo: '/mylogo.png',
     nav: [
       { text: 'Inicio', link: '/' },
       { text: 'Comenzar', link: '/guide/introduction' },
-      { text: 'CaribesTIC', link: 'https://caribestic.github.io/' },      
+      { text: 'ecanquiz', link: 'https://ecanquiz.github.io/' },      
     ],
     sidebar: [{
         text: 'Comenzar',   // required
@@ -52,7 +52,7 @@ export default defineConfig({
       }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/CaribesTIC/laravuel-apispa' }
+      { icon: 'github', link: 'https://github.com/ecanquiz/laravuel-apispa' }
     ]
   }
 })
