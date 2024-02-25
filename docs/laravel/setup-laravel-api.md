@@ -2,23 +2,23 @@
 
 Asegúrese de cambiar lo siguiente en su archivo `.env`:
 
-```php
+```env
 DB_HOST=127.0.0.1
 ```
 A esto:
 
-```php
+```env
 DB_HOST=mysql
 ```
 O a esto:
 
-```php
+```env
 DB_HOST=pgsql
 ```
 
 Agregue una dirección de remitente en el `.env` para que se pueda enviar el correo electrónico.
 
-```php
+```env
 MAIL_FROM_ADDRESS=test@test.com
 ```
 
@@ -26,7 +26,7 @@ MAIL_FROM_ADDRESS=test@test.com
 
 La documentación completa se puede encontrar en el [sitio web de Laravel](https://laravel.com/docs/9.x/sanctum).
 
-```php
+```sh
 composer require laravel/sanctum
 php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
 php artisan migrate
@@ -34,7 +34,7 @@ php artisan migrate
 
 Sanctum necesita una configuración específica para permitirle trabajar con una SPA separada. Primero agreguemos lo siguiente en su archivo `.env`:
 
-```php
+```env
 SANCTUM_STATEFUL_DOMAINS=localhost:5173
 SPA_URL=http://localhost:5173
 SESSION_DOMAIN=localhost
@@ -56,7 +56,7 @@ Agregue el middleware de Sanctum a su grupo de middleware api dentro del archivo
 
 La documentación completa se puede encontrar en el [sitio web de Laravel](https://laravel.com/docs/9.x/fortify).
 
-```php
+```sh
 composer require laravel/fortify
 php artisan vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"
 php artisan migrate
@@ -89,13 +89,13 @@ Configure a semilla para agregar un usuario de prueba, en el archivo `DatabaseSe
 
 Ejecuta las migraciones:
 
-```php
+```sh
 php artisan migrate --seed
 ```
 ## Almacenamiento de Archivos
 
 En el archivo `.env` se declara lo siguiente para el almacenamiento de archivos :
 
-```php
+```env
 DO_SPACES_PUBLIC=http://localhost:8000/storage/
 ```
