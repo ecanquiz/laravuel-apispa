@@ -1,6 +1,6 @@
 # Usando VueRouter
 
-Una vez instanciado el `router`, este es pasado como complemento global a la aplicación. Puede ver más detalles sobre complementos [aquí](../vue/vue-global-plugins.html).
+Una vez instanciado el `router`, este es pasado como complemento global a la aplicación. Puede ver más detalles sobre complementos [aquí](../vue-3/vue-global-plugins.html).
 
 ## `router`
 
@@ -130,4 +130,4 @@ export default [{
 
 En la mayoría de las aplicaciones de tamaño mediano a grande, vale la pena crear componentes RouterLink personalizados. Por ello, ampliamos RouterLink, para manejar enlaces externos también. Eche un vistazo al componente [src/components/AppLink.vue](https://github.com/CaribesTIC/laravuel-spa/blob/main/src/components/AppLink.vue).
 
-Cabe recordar que este componente forma parte de los [componentes globales](../vue/vue-global-plugins.html#plugins-components). Por lo tanto, está siempre disponible dentro de cualquier otro componente de la SPA.
+Cabe recordar que este componente forma parte de los [componentes globales](../vue-3/vue-global-plugins.html#plugins-components). Por lo tanto, está siempre disponible dentro de cualquier otro componente de la SPA.

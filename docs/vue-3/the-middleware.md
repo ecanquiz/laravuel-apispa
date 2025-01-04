@@ -2,7 +2,7 @@
 
 ## Visión General
 
-A medida que nuestra aplicación crezca, necesitará tener una forma de controlar lo que sucede antes de que se cargue una ruta. Un ejemplo de esto se cubre al [agregar autenticación](../vue/vue-authentication.html#proteccion-de-rutas-y-mantenimiento-del-estado).
+A medida que nuestra aplicación crezca, necesitará tener una forma de controlar lo que sucede antes de que se cargue una ruta. Un ejemplo de esto se cubre al [agregar autenticación](../vue-3/vue-authentication.html#proteccion-de-rutas-y-mantenimiento-del-estado).
 
 Usando el enganche del enrutador `beforeEach`, verificamos si una ruta requiere `Auth`, si lo hace, entonces se ejecuta la lógica de autenticación. Esto funciona bien si solo está verificando la autenticación, pero ¿qué sucede si necesita agregar verificaciones adicionales para las rutas de administración? Se verifica un usuario para ver si está autenticado, luego, si va a ver la ruta `/users`, también debe ser administrador. 
 
@@ -101,7 +101,7 @@ Esto ahora se puede intercambiar para pasar una serie de funciones de `middlewar
 }
 ```
 
-Las funciones del `middleware` se mantendrán juntas en una nueva carpeta [src/middleware](https://github.com/CaribesTIC/laravuel-spa/tree/main/src/middleware). Echemos un vistazo a la función del archivo [src/middleware/auth.ts](https://github.com/CaribesTIC/laravuel-spa/blob/main/src/middleware/auth.ts). Debería parecer familiar porque la mayor parte del código se corta del método original `beforeEach` anterior. Consulte el apartado de [Middleware Auth](../vue/the-middleware.html#middleware-auth) para obtener una descripción detallada de este método. Por ahora, solo concéntrese en el patrón para una función de middleware:
+Las funciones del `middleware` se mantendrán juntas en una nueva carpeta [src/middleware](https://github.com/CaribesTIC/laravuel-spa/tree/main/src/middleware). Echemos un vistazo a la función del archivo [src/middleware/auth.ts](https://github.com/CaribesTIC/laravuel-spa/blob/main/src/middleware/auth.ts). Debería parecer familiar porque la mayor parte del código se corta del método original `beforeEach` anterior. Consulte el apartado de [Middleware Auth](../vue-3/the-middleware.html#middleware-auth) para obtener una descripción detallada de este método. Por ahora, solo concéntrese en el patrón para una función de middleware:
 
 ```ts
 export default function auth({ to, next, store }) {}
@@ -192,7 +192,7 @@ Hasta ahora, solo ha habido una función de middleware llamada `auth`, veamos c�
 }
 ```
 
-Podemos revisar la función de [middleware de admin](../vue/the-middleware.html#middleware-admin) en su apartado de middleware.
+Podemos revisar la función de [middleware de admin](../vue-3/the-middleware.html#middleware-admin) en su apartado de middleware.
 
 Veamos cómo podemos llamar a las funciones `middleware[]()` de `auth` y `admin` con el gancho `berforeEach`.
 

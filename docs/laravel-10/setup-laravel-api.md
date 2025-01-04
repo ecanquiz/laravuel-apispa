@@ -2,23 +2,23 @@
 
 Asegúrese de cambiar lo siguiente en su archivo `.env`:
 
-```env
+```sh
 DB_HOST=127.0.0.1
 ```
 A esto:
 
-```env
+```sh
 DB_HOST=mysql
 ```
 O a esto:
 
-```env
+```sh
 DB_HOST=pgsql
 ```
 
 Agregue una dirección de remitente en el `.env` para que se pueda enviar el correo electrónico.
 
-```env
+```sh
 MAIL_FROM_ADDRESS=test@test.com
 ```
 
@@ -34,7 +34,7 @@ php artisan migrate
 
 Sanctum necesita una configuración específica para permitirle trabajar con una SPA separada. Primero agreguemos lo siguiente en su archivo `.env`:
 
-```env
+```sh
 SANCTUM_STATEFUL_DOMAINS=localhost:5173
 SPA_URL=http://localhost:5173
 SESSION_DOMAIN=localhost
@@ -96,6 +96,6 @@ php artisan migrate --seed
 
 En el archivo `.env` se declara lo siguiente para el almacenamiento de archivos :
 
-```env
+```sh
 DO_SPACES_PUBLIC=http://localhost:8000/storage/
 ```
