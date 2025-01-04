@@ -1,6 +1,6 @@
 # CRUD de Usuarios
 
-El CRUD de Usuarios es un módulo con rutas protegidas desde el [**`router`**](../vue/the-middleware.html#proteccion-de-rutas-y-mantenimiento-del-estado) de uso exclusivo del administrador. Su diseño es un excelente andamiaje para desarrollar cualquier CRUD básico.
+El CRUD de Usuarios es un módulo con rutas protegidas desde el [**`router`**](../vue-3/the-middleware.html#proteccion-de-rutas-y-mantenimiento-del-estado) de uso exclusivo del administrador. Su diseño es un excelente andamiaje para desarrollar cualquier CRUD básico.
 
 Está conformado por dos vistas ubicadas dentro de la carpeta [**`src/modules/User/views/`**](https://github.com/CaribesTIC/laravuel-spa/tree/main/src/modules/User/views):
 
@@ -12,17 +12,17 @@ Está conformado por dos vistas ubicadas dentro de la carpeta [**`src/modules/Us
 Esta vista [**`src/modules/User/views/Index.vue`**](https://github.com/CaribesTIC/laravuel-spa/blob/main/src/modules/User/views/Index.vue) es la encargada de mostrar la lista de todos los usuarios que han sido registrados en la base de datos de la API de Laravel. Si no hay usuarios registrados entonces mostrará el mensaje `Usuarios no encontrados.`
 
 Ella importa los siguientes componentes genéricos:
-- [AppBtn.vue](../vue/generic-components.html#appbtn-vue)
-- [AppPageHeader.vue](../vue/generic-components.html#apppageheader-vue)
-- [AppPaginationB.vue](../vue/generic-components.html#apppaginationb-vue)
+- [AppBtn.vue](../vue-3/generic-components.html#appbtn-vue)
+- [AppPageHeader.vue](../vue-3/generic-components.html#apppageheader-vue)
+- [AppPaginationB.vue](../vue-3/generic-components.html#apppaginationb-vue)
 
 Además, esta vista importa el componible personalizado [**`src/modules/User/composables/useIndex.ts`**](https://github.com/CaribesTIC/laravuel-spa/blob/main/src/modules/User/composables/useIndex.ts) -
 Dentro de este componible se encuentra la regla de negocio, separándola de su interfaz de usuario.
 
 Este componible importa de Vue la función [reactive](https://vuejs.org/api/reactivity-core.html#reactive) y el gancho [onMounted](https://vuejs.org/api/composition-api-lifecycle.html#onmounted). Mientras que de VueRouter importa el gancho [onBeforeRouteUpdate](https://router.vuejs.org/api/#onbeforerouteupdate). Tambíen importa los siguientes componibles genéricos:
 
-- [useHttp](../vue/generic-composables.html#usehttp-ts)
-- [useTableGrid](../vue/generic-composables.html#usetablegrid-ts)
+- [useHttp](../vue-3/generic-composables.html#usehttp-ts)
+- [useTableGrid](../vue-3/generic-composables.html#usetablegrid-ts)
 
 A su vez, este componible necesita importar:
 - [**`src/modules/User/services/index.ts`**](https://github.com/CaribesTIC/laravuel-spa/blob/main/src/modules/User/services/index.ts), con el alias `UserService`. Aquí es donde están disponibles los puntos hacia la API de Laravel para consumir los correspondientes métodos `getUsers` y `deleteUser`.
@@ -34,7 +34,7 @@ Esta vista [**`src/modules/User/views/CreateOrEdit.vue`**](https://github.com/Ca
 - Crear un registro nuevo.
 - Modificar un registro existente. 
 
-Esta vista además de importar el componente genérico [AppPageHeader.vue](../vue/generic-components.html#apppageheader-vue), tamién importa:
+Esta vista además de importar el componente genérico [AppPageHeader.vue](../vue-3/generic-components.html#apppageheader-vue), tamién importa:
 
 - [**`src/modules/User/components/FormCreateOrEdit.vue`**](https://github.com/CaribesTIC/laravuel-spa/blob/main/src/modules/User/components/FormCreateOrEdit.vue). Este componente personalizado encapsula el formulario para hacer más fácil la prueba de la emisión del evento `submit`.
 - [**`src/modules/User/composables/useCreateOrEdit.ts `**](https://github.com/CaribesTIC/laravuel-spa/blob/main/src/modules/User/composables/useCreateOrEdit.ts). Este composable personalizado mantiene la lógica de negocio separada de la interfaz del usuario.

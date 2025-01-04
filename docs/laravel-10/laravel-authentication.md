@@ -27,7 +27,7 @@ Mientras esté en el archivo `config/cors.php`, configure lo siguiente:
 'supports_credentials' => true,
 ```
 
-Lo anterior asegura que tiene el encabezado `Access-Control-Allow-Credentials` con un valor de `true` establecido. Puedes leer más sobre esto en la [documentación de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials). Pasaremos este encabezado a través del SPA, pero hablaremos más de eso cuando pasemos a [configurarlo](../vue/axios-wrapper.html#objeto-init).
+Lo anterior asegura que tiene el encabezado `Access-Control-Allow-Credentials` con un valor de `true` establecido. Puedes leer más sobre esto en la [documentación de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials). Pasaremos este encabezado a través del SPA, pero hablaremos más de eso cuando pasemos a [configurarlo](../vue-3/axios-wrapper.html#objeto-init).
 
 ## Configuración de Fortify
 
@@ -115,7 +115,7 @@ ResetPassword::createUrlUsing(function ($user, string $token) {
 });
 ```
 
-Para que todo esto funcione, necesitaremos tener una vista de restablecimiento de contraseña en el SPA que maneje el token y devuelva la nueva contraseña de los usuarios. Esto se explica, con un enlace al componente, en la página de [autenticación de Vue](../vue/setup-vue-spa.html#) bajo el encabezado Reset Password View.
+Para que todo esto funcione, necesitaremos tener una vista de restablecimiento de contraseña en el SPA que maneje el token y devuelva la nueva contraseña de los usuarios. Esto se explica, con un enlace al componente, en la página de [autenticación de Vue](../vue-3/setup-vue-spa.html#) bajo el encabezado Reset Password View.
 
 ## Rutas API
 

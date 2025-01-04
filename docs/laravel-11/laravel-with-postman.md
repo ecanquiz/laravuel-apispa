@@ -12,7 +12,7 @@ Si está creando un SPA y quiere probar sus terminales con autenticación basada
 
 Debido a que Sanctum utiliza la autenticación basada en cookies y llega a puntos finales protegidos por CSRF como `/login` y `/logout`, debemos asegurarnos de que estamos enviando un token CSRF con Postman. Obtenemos esto enviando una solicitud a `/sanctum/csrf-cookie` primero. También tendremos que asegurarnos de que el `Referrer` se envíe correctamente para futuras solicitudes de Sanctum para permitirlos.
 
-Estamos probando esto con un [Proyecto Laravel correctamente configurado con Sanctum](../laravel/setup-laravel-api.html#), que permite solicitudes de localhost, en términos de dominios CORS y Sanctum.
+Estamos probando esto con un [Proyecto Laravel correctamente configurado con Sanctum](../laravel-11/setup-laravel-api.html#), que permite solicitudes de localhost, en términos de dominios CORS y Sanctum.
 
 ## Crear una Colección de Postman
 
