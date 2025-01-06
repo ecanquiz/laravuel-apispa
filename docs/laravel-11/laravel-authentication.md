@@ -2,20 +2,31 @@
 
 ## Configuración de CORS
 
-Si no configura CORS correctamente, puede ser la causa (perdón por el juego de palabras) de una gran frustración. Lo primero que debe recordar es que su SPA y API deben ejecutarse en el mismo dominio de nivel superior. Sin embargo, pueden colocarse en diferentes subdominios. Al ejecutarse localmente, con `php artisan serve` la API se ejecutará en `http://localhost:8000`. Y el SPA, que usa Vite, normalmente se ejecutará con `npm run dev` en `http://localhost:3000` (el puerto puede variar, pero está bien).
+A partir de Laravel 11, la configuración del CORS no se publica de manera predeterminada al momento de la instalación. Si no configura CORS correctamente, puede ser la causa (perdón por el juego de palabras) de una gran frustración. Así que, [publiquemos](https://laravel.com/docs/11.x/configuration#configuration-publishing) el archivo [`config/cors.php`](https://laravel.com/docs/11.x/sanctum#cors-and-cookies) para hacer ciertos ajustes.
+
+Ejecutemos en el terminal el siguiente comando.
+```sh
+php artisan config:publish cors
+```
+
+
+
+
+Lo primero que debe recordar es que su SPA y API deben ejecutarse en el mismo dominio de nivel superior. Sin embargo, pueden colocarse en diferentes subdominios. Al ejecutarse localmente, con `php artisan serve` la API se ejecutará en `http://localhost:8000`. Y el SPA, que usa Vite, normalmente se ejecutará con `npm run dev` en `http://localhost:5137` (el puerto puede variar, pero está bien).
 
 Con esto en su lugar, solo necesitamos agregar las rutas que se permitirán a través de CORS. La mayoría de los puntos finales de la API se realizarán a través de `api/*`, pero Fortify tiene varios puntos finales que debe agregar junto con la obtención de `'sanctum/csrf-cookie'`, agregue lo siguiente en su archivo `config/cors.php`:
 
 ```php
 'paths' => [
+   // '*',
   'api/*',
+  'sanctum/csrf-cookie',
   'login',
   'logout',
   'register',
   'user/password',
   'forgot-password',
   'reset-password',
-  'sanctum/csrf-cookie',
   'user/profile-information',
   'email/verification-notification',
 ],
@@ -24,7 +35,7 @@ Con esto en su lugar, solo necesitamos agregar las rutas que se permitirán a tr
 Mientras esté en el archivo `config/cors.php`, configure lo siguiente:
 
 ```php
-'supports_credentials' => true,
+'supports_credentials' => true
 ```
 
 Lo anterior asegura que tiene el encabezado `Access-Control-Allow-Credentials` con un valor de `true` establecido. Puedes leer más sobre esto en la [documentación de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials). Pasaremos este encabezado a través del SPA, pero hablaremos más de eso cuando pasemos a [configurarlo](../vue-3/axios-wrapper.html#objeto-init).
